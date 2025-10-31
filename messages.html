@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mesajlar - Hukuk Platformu</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/message.css">
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <h1><a href="avukat.html">Hukuk Platformu</a></h1>
+            <nav>
+                <ul>
+                    <li><a href="feed.html">Akış</a></li>
+                    <li><a href="explore.html">Keşfet</a></li>
+                    <li><a href="messages.html" class="active">Mesajlar</a></li>
+                    <li><a href="#notifications">Bildirimler</a></li>
+                </ul>
+            </nav>
+            <div class="user-actions">
+                <a href="profile.html" class="nav-button-secondary">Profilim</a>
+                <button id="logout-btn" class="nav-button-primary">Çıkış Yap</button>
+            </div>
+        </div>
+    </header>
+
+    <main class="messages-container">
+        <div class="conversations-panel">
+            <div class="panel-header">
+                <h2>Sohbetler</h2>
+            </div>
+            <div id="conversations-list" class="list">
+                <p>Sohbetler yükleniyor...</p>
+                </div>
+        </div>
+        <div class="chat-panel">
+            <div id="chat-welcome" class="welcome-message">
+                <i class="fas fa-comments"></i>
+                <h2>Mesajlaşmaya Başlayın</h2>
+                <p>Görüntülemek için sol taraftan bir sohbet seçin.</p>
+            </div>
+            <div id="chat-window" class="chat-window" style="display: none;">
+                <div class="chat-header">
+                    <img id="chat-header-img" src="" alt="">
+                    <h3 id="chat-header-name"></h3>
+                </div>
+                <div id="messages-area" class="messages-area">
+                    </div>
+                <form id="message-form" class="message-form">
+                    <input type="text" id="message-input" placeholder="Bir mesaj yazın..." autocomplete="off">
+                    <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                </form>
+            </div>
+        </div>
+    </main>
+    
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+    <script>
+        const firebaseConfig = {
+            apiKey: "AIzaSyD-I82vqUVdsAjjcTApj3VLLi_lQgGVl_Q",
+            authDomain: "avukat-9203e.firebaseapp.com",
+            projectId: "avukat-9203e",
+            storageBucket: "avukat-9203e.firebasestorage.app",
+            messagingSenderId: "692454745525",
+            appId: "1:692454745525:web:a900536eeefceaf50ca5fc",
+            measurementId: "G-MYX346EJ6Z"
+        };
+        firebase.initializeApp(firebaseConfig);
+    </script>
+    <script src="js/message.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Avukatlar için müvekkil bulma, meslektaşlarla iş birliği ve yapay zeka destekli hukuki çözümler sunan profesyonel platform.">
+    <title>Avukatlar için Profesyonel Platform</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css"> 
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <h1>Hukuk Platformu</h1>
+            <nav>
+                <ul>
+                    <li><a href="#about">Hakkımızda</a></li>
+                    <li><a href="#features">Özellikler</a></li>
+                    <li><a href="#pricing">Fiyatlandırma</a></li>
+                    <li><a href="#contact">İletişim</a></li>
+                </ul>
+                <div class="user-actions">
+                    <a href="#" id="login-btn" class="nav-button-secondary">Giriş Yap</a>
+                    <a href="#" id="register-btn" class="nav-button-primary">Kayıt Ol</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <section id="hero">
+        <div class="container">
+            <h2>Avukatlar için Geleceğin Platformu</h2>
+            <p>Müvekkil bulma, meslektaşlarla iş birliği ve yapay zeka destekli çözümlerle hukuki süreçlerinizi dönüştürün.</p>
+            <a href="#features" class="cta-button">Özellikleri Keşfet</a>
+        </div>
+    </section>
+
+    <section id="about">
+        <div class="container">
+            <h2>Proje Tanımı</h2>
+            <p>Avukatlar için profesyonel bir platform geliştirmeyi hedefliyoruz. Bu platform, avukatların müvekkil bulmalarını, meslektaşlarıyla iş birliği yapmalarını, acil hukuki sunumlarını ve yapay zeka destekli çözümler üretmelerini sağlayacaktır.</p>
+        </div>
+    </section>
+
+    <section id="features">
+        <div class="container">
+            <h2>Uygulama Özellikleri</h2>
+            <div class="feature-grid">
+                <div class="feature-item">
+                    <i class="fas fa-search"></i>
+                    <h3>Profil & Arama</h3>
+                    <p>Detaylı profillerle müvekkil arayışına cevap verin ve doğru avukatı kolayca bulun.</p>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-comments"></i>
+                    <h3>Mesajlaşma</h3>
+                    <p>Güvenli mesajlaşma sistemi ile müvekkiller ve meslektaşlarla kolay iletişim kurun.</p>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-users"></i>
+                    <h3>Müvekkil Yönlendirme</h3>
+                    <p>İhtiyacı olan müvekkilleri ilgili uzmanlık alanına sahip avukatlara yönlendirin.</p>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-gavel"></i>
+                    <h3>Acil Hukuki Müdahale</h3>
+                    <p>7/24 Adalet Erişimi modülü ile acil durumlara hızlıca yanıt verin.</p>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-brain"></i>
+                    <h3>AI Destekli Hukuki Yardım</h3>
+                    <p>HYZA Pro+ ile yapay zeka destekli dilekçe yazımı ve anlık danışmanlık hizmetlerinden faydalanın.</p>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-network-wired"></i>
+                    <h3>Avukatlar Arası Sosyal Platform</h3>
+                    <p>BaroNet tarzı bir sosyal ağ ile meslektaşlarınızla fikir alışverişinde bulunun ve iş birliği yapın.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="pricing">
+        <div class="container">
+            <h2>İş Modeli ve Paketler</h2>
+            <div class="pricing-grid">
+                <div class="pricing-item">
+                    <h3>Aylık Üyelik</h3>
+                    <p>Avukatlar belirli bir aidat ödeyerek sisteme dahil olur ve temel özelliklerden yararlanır.</p>
+                </div>
+                <div class="pricing-item">
+                    <h3>Premium Paket (HYZA Pro+)</h3>
+                    <p>Yapay zeka destekli dilekçe yazımı, anlık danışmanlık ve diğer premium özellikler.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="container">
+            <h2>İletişim</h2>
+            <p>Proje hakkında daha fazla bilgi almak için veya iş birliği fırsatları için bize ulaşın.</p>
+            <form id="contact-form">
+                <label for="name" class="sr-only">Adınız Soyadınız</label>
+                <input type="text" id="name" name="name" placeholder="Adınız Soyadınız" required>
+                <label for="email" class="sr-only">E-posta Adresiniz</label>
+                <input type="email" id="email" name="email" placeholder="E-posta Adresiniz" required>
+                <label for="message" class="sr-only">Mesajınız</label>
+                <textarea id="message" name="message" placeholder="Mesajınız" rows="5" required></textarea>
+                <button type="submit">Gönder</button>
+            </form>
+            <div id="form-status"></div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Hukuk Platformu. Tüm hakları saklıdır.</p>
+        </div>
+    </footer>
+
+    <div id="auth-modal" class="modal-backdrop">
+        <div class="modal-content">
+            <span id="close-modal" class="close-btn">&times;</span>
+            <div id="login-view">
+                <h2>Giriş Yap</h2>
+                <form id="login-form">
+                    <input type="email" id="login-email" placeholder="E-posta Adresiniz" required>
+                    <input type="password" id="login-password" placeholder="Şifreniz" required>
+                    <button type="submit">Giriş Yap</button>
+                    <p id="login-error" class="error-message"></p>
+                </form>
+                <p class="modal-switcher">Hesabınız yok mu? <a href="#" id="show-register">Kayıt Olun</a></p>
+            </div>
+            <div id="register-view" style="display: none;">
+                <h2>Kayıt Ol</h2>
+                <form id="register-form">
+                    <input type="text" id="register-username" placeholder="Kullanıcı Adı Belirleyin" required>
+                    <input type="email" id="register-email" placeholder="E-posta Adresiniz" required>
+                    <input type="text" id="register-baro" placeholder="Baro Sicil Numarası" required>
+                    <input type="password" id="register-password" placeholder="Şifreniz (en az 6 karakter)" required>
+                    <button type="submit">Kayıt Ol</button>
+                    <p id="register-error" class="error-message"></p>
+                </form>
+                <p class="modal-switcher">Zaten bir hesabınız var mı? <a href="#" id="show-login">Giriş Yapın</a></p>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+
+    <script>
+      // SENİN ÖZEL FIREBASE BİLGİLERİN
+      const firebaseConfig = {
+        apiKey: "AIzaSyD-I82vqUVdsAjjcTApj3VLLi_lQgGVl_Q",
+        authDomain: "avukat-9203e.firebaseapp.com",
+        projectId: "avukat-9203e",
+        storageBucket: "avukat-9203e.firebasestorage.app",
+        messagingSenderId: "692454745525",
+        appId: "1:692454745525:web:a900536eeefceaf50ca5fc", // Düzeltildi
+        measurementId: "G-MYX346EJ6Z"
+      };
+
+      // Firebase'i Başlat
+      firebase.initializeApp(firebaseConfig);
+      const auth = firebase.auth();
+      const db = firebase.firestore(); 
+    </script>
+    
+    <script src="js/script.js"></script>
+
+</body>
+</html>

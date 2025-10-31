@@ -1,0 +1,277 @@
+/* profile.css */
+
+/* --- DİKKAT: Bu değişkenler style.css'te tanımlı değilse, bu dosyanın en üstünde olmaları gerekir. --- */
+:root {
+    --primary-color: #004080;
+    --secondary-color: #007bff;
+    --border-color: #e0e0e0;
+}
+
+main.profile-container {
+    max-width: 850px;
+    margin: 30px auto;
+    background-color: #ffffff;
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    overflow: hidden; 
+}
+
+.profile-header {
+    position: relative;
+    border-bottom: 1px solid var(--border-color);
+    min-height: 295px;
+}
+
+/* --- Resim Yükleme Geçişleri --- */
+.profile-banner img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    background-color: #e0e0e0;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.profile-picture {
+    position: absolute;
+    left: 20px;
+    top: 145px; 
+    z-index: 2;
+}
+
+.profile-picture img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 5px solid #ffffff;
+    background-color: #ffffff;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+/* Resim yüklendiğinde görünürlük */
+.profile-banner img.loaded,
+.profile-picture img.loaded,
+.post-user-icon img.loaded {
+    opacity: 1;
+}
+
+.profile-actions {
+    position: absolute;
+    right: 20px;
+    top: 235px;
+    z-index: 2;
+}
+
+.edit-profile-btn {
+    padding: 10px 20px;
+    border: 1px solid var(--primary-color);
+    background-color: #ffffff;
+    color: var(--primary-color);
+    border-radius: 999px;
+    font-weight: bold;
+    font-size: 15px;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+
+.edit-profile-btn:hover {
+    background-color: var(--primary-color);
+    color: #fff;
+}
+
+/* --- Profil Bilgileri --- */
+.profile-info {
+    padding: 20px;
+    padding-left: 190px;
+    text-align: left;
+}
+
+.profile-info .display-name { 
+    margin: 0; 
+    font-size: 24px;
+    font-weight: bold;
+}
+.profile-info .username { 
+    margin: 0 0 15px 0;
+    color: #555;
+    font-size: 16px;
+}
+.profile-info .bio { margin-bottom: 15px; font-size: 16px; line-height: 1.5; }
+.extra-info { display: flex; gap: 25px; flex-wrap: wrap; }
+.extra-info span { color: #555; display: flex; align-items: center; gap: 8px; }
+
+/* --- Sekmeler ve İçerik --- */
+.profile-content { padding: 0; }
+.profile-tabs { border-bottom: 1px solid var(--border-color); }
+.profile-tabs ul { list-style: none; padding: 0; margin: 0; display: flex; justify-content: space-around; }
+.profile-tabs li { flex-grow: 1; text-align: center; }
+.profile-tabs a { display: block; padding: 15px 10px; text-decoration: none; color: #555; font-weight: bold; position: relative; transition: background-color 0.2s; }
+.profile-tabs a:hover { background-color: #f7f9f9; }
+.profile-tabs li.active a { color: var(--primary-color); }
+.profile-tabs li.active a::after { 
+    content: ''; 
+    position: absolute; 
+    bottom: 0; 
+    left: 0; 
+    width: 100%; 
+    height: 3px; 
+    background-color: var(--primary-color); 
+}
+
+/* --- Gönderi Alanı --- */
+.create-post-container { display: flex; gap: 15px; padding: 20px; border-bottom: 10px solid #f7f9f9; }
+.post-user-icon img { width: 50px; height: 50px; border-radius: 50%; object-fit: cover; }
+.post-input-area { flex-grow: 1; }
+.create-post-container textarea { width: 100%; min-height: 80px; border: 1px solid #ccc; border-radius: 8px; padding: 10px; font-size: 16px; resize: vertical; margin-bottom: 10px; box-sizing: border-box; }
+.post-actions { display: flex; justify-content: flex-end; align-items: center; gap: 10px; margin-top: 10px; }
+
+.action-btn-primary, .action-btn-secondary { 
+    border: none; 
+    border-radius: 999px; 
+    font-weight: bold; 
+    cursor: pointer; 
+    padding: 10px 20px; 
+    font-size: 14px; 
+    transition: background-color 0.2s; 
+}
+.action-btn-primary { background-color: var(--primary-color); color: white; }
+.action-btn-primary:hover { background-color: var(--secondary-color); }
+.action-btn-secondary { background-color: #e7e9ea; color: #333; }
+.action-btn-secondary:hover { background-color: #d7d9da; }
+
+/* --- Feed / Gönderi Listesi --- */
+.feed { text-align: center; padding: 0; color: #555; transition: opacity 0.3s ease-in-out; }
+.feed .post { position: relative; display: flex; gap: 15px; text-align: left; padding: 20px; border-bottom: 1px solid #eee; }
+.post-author-photo-wrapper { flex-shrink: 0; }
+.post-author-photo { width: 50px; height: 50px; border-radius: 50%; object-fit: cover; }
+.post-body { display: flex; flex-direction: column; }
+.post-author-name { font-weight: bold; color: #111; }
+.post-author-username { color: #555; font-size: 15px; }
+.post-content { margin-top: 5px; line-height: 1.6; white-space: pre-wrap; word-wrap: break-word; }
+.post.article { flex-direction: column; align-items: flex-start; }
+.article-title { font-size: 22px; font-weight: bold; color: #111; margin-bottom: 5px; }
+
+/* --- Post Actions (Dropdown) --- */
+.post-actions-menu { position: absolute; top: 15px; right: 15px; }
+.three-dots-icon { width: 28px; height: 28px; display: flex; justify-content: center; align-items: center; border-radius: 50%; cursor: pointer; font-weight: bold; font-size: 16px; color: #555; transition: background-color 0.2s; }
+.three-dots-icon:hover { background-color: rgba(0, 123, 255, 0.1); color: var(--primary-color); }
+.dropdown-content { display: none; position: absolute; right: 0; top: 30px; background-color: white; min-width: 180px; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.1); z-index: 10; border-radius: 8px; overflow: hidden; border: 1px solid #ddd; }
+.dropdown-content.show { display: block; }
+.dropdown-content.dropdown-up { top: auto; bottom: 30px; }
+.dropdown-content a { color: black; padding: 12px 16px; text-decoration: none; display: block; font-size: 15px; font-weight: 500; transition: background-color 0.2s; }
+.dropdown-content a:hover { background-color: #f1f1f1; }
+.dropdown-content a.delete { color: #dc3545; font-weight: bold; }
+
+/* --- Modal İçeriği (Profil Düzenleme ve Makale Yazma) --- */
+.modal-content { padding: 0; max-width: 600px; overflow: visible; }
+.modal-header { display: flex; align-items: center; padding: 10px 20px; border-bottom: 1px solid var(--border-color); }
+.modal-header h2 { margin: 0; font-size: 20px; margin-left: 15px; }
+.modal-header .close-btn { position: static; font-size: 24px; }
+.save-btn { margin-left: auto; background-color: var(--primary-color); color: white; border: none; border-radius: 999px; padding: 8px 20px; font-weight: bold; font-size: 15px; cursor: pointer; }
+
+/* Resim Yükleme Alanı */
+.modal-images-section { position: relative; background-color: #ccc; min-height: 200px; }
+.modal-banner-wrapper img { width: 100%; height: 200px; object-fit: cover; display: block; }
+.modal-profile-pic-wrapper { position: absolute; left: 20px; bottom: -70px; z-index: 5; }
+.modal-profile-pic-wrapper img { width: 140px; height: 140px; border-radius: 50%; border: 4px solid white; object-fit: cover; }
+
+.image-overlay-buttons {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    opacity: 0;
+    transition: opacity 0.3s;
+    z-index: 4;
+    cursor: pointer;
+}
+
+.modal-banner-wrapper:hover .image-overlay-buttons, .modal-profile-pic-wrapper:hover .image-overlay-buttons { opacity: 1; }
+.image-overlay-buttons.profile { border-radius: 50%; }
+
+.image-action-icon {
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 44px;
+    height: 44px;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    cursor: pointer;
+    font-size: 20px;
+}
+.image-action-icon:hover { background-color: rgba(0, 0, 0, 0.8); }
+
+.modal-form-fields { padding: 20px; padding-top: 85px; }
+#edit-profile-form label, #create-article-form label { 
+    display: block;
+    text-align: left; 
+    font-weight: bold;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    font-size: 14px;
+    color: #555; 
+}
+
+#edit-profile-form input[type="text"], 
+#edit-profile-form textarea,
+#create-article-form input, 
+#create-article-form textarea { 
+    width: 100%; 
+    padding: 12px; 
+    border: 1px solid #ccc; 
+    border-radius: 5px; 
+    box-sizing: border-box; 
+    font-size: 16px; 
+    background-color: #f7f7f7; 
+}
+#edit-profile-form textarea, #create-article-form textarea { 
+    resize: vertical; 
+}
+
+/* --- TOAST BİLDİRİM STİLLERİ (KESİN ÇÖZÜM İÇİN) --- */
+#notification-container {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 9999;
+    display: flex; /* İç içe geçme sorununu çözer */
+    flex-direction: column;
+    gap: 10px;
+}
+
+.toast-notification {
+    padding: 15px 20px;
+    color: white;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    font-size: 16px;
+    opacity: 1;
+    /* KRİTİK: Bu satır, kaybolma animasyonunun süresini tanımlar ve JS ile birlikte çalışır */
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out; 
+    transform: translateX(0); /* Başlangıç konumu */
+}
+
+.toast-notification.success {
+    background-color: var(--secondary-color);
+}
+
+.toast-notification.error {
+    background-color: #dc3545;
+}
+
+.toast-notification.hide {
+    opacity: 0;
+    transform: translateX(100%); /* Sağa doğru kaybolma */
+}

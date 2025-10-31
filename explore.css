@@ -1,0 +1,136 @@
+:root {
+    --primary-color: #004080;
+    --secondary-color: #007bff;
+    --text-color: #333;
+    --bg-color: #f4f4f4;
+    --light-bg: #ffffff;
+    --shadow-light: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+body {
+    background-color: var(--bg-color);
+}
+
+.explore-container {
+    max-width: 1100px;
+    margin: 30px auto;
+    padding: 20px;
+}
+
+.search-bar-wrapper {
+    background-color: var(--light-bg);
+    padding: 25px;
+    border-radius: 8px;
+    margin-bottom: 30px;
+    box-shadow: var(--shadow-light);
+    text-align: center;
+}
+
+.search-bar-wrapper h2 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    color: var(--primary-color);
+}
+
+.search-input-container {
+    position: relative;
+    max-width: 500px;
+    margin: auto;
+}
+
+.search-input-container i {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #aaa;
+}
+
+#search-input {
+    width: 100%;
+    padding: 15px 15px 15px 45px;
+    border-radius: 999px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+.results-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.user-card {
+    background-color: var(--light-bg);
+    border-radius: 8px;
+    box-shadow: var(--shadow-light);
+    text-align: center;
+    padding: 20px;
+    transition: transform 0.2s, box-shadow 0.2s;
+    display: flex; /* İçeriklerin hizalanması için eklendi */
+    flex-direction: column; /* İçeriklerin dikey hizalanması için */
+    justify-content: space-between; /* İçeriği yaymak için */
+}
+
+.user-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+}
+
+.user-card img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+    border: 3px solid var(--primary-color);
+    align-self: center; /* Resmi ortalamak için */
+}
+
+.user-card h3 {
+    margin: 10px 0 5px 0;
+    color: var(--primary-color);
+}
+
+.user-card p {
+    margin: 5px 0; /* P'ler arası boşluğu azalttım */
+    color: #666;
+    font-size: 14px;
+}
+
+.user-card a.profile-link-btn { /* 'a' olarak seçiciyi belirginleştirdim */
+    display: inline-block;
+    padding: 8px 16px;
+    background-color: var(--secondary-color);
+    color: white;
+    text-decoration: none;
+    border-radius: 999px;
+    font-weight: bold;
+    transition: background-color 0.2s;
+    margin-top: 15px; /* Üstteki içerikle arasında boşluk bırakır */
+}
+
+.user-card a.profile-link-btn:hover {
+    background-color: #0056b3;
+}
+
+/* YENİ EKLENEN FİLTRE STİLLERİ */
+.filter-container {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+    flex-wrap: wrap; /* Mobil için */
+}
+
+.filter-container select {
+    padding: 10px 15px;
+    font-size: 15px;
+    border-radius: 20px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    min-width: 220px;
+    box-sizing: border-box;
+    cursor: pointer;
+}

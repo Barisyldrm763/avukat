@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Akış - Hukuk Platformu</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    
+    <link rel="stylesheet" href="css/style.css"> 
+    <link rel="stylesheet" href="css/feed.css"> 
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <h1><a href="avukat.html" style="color:white; text-decoration:none;">Hukuk Platformu</a></h1>
+            <nav>
+                <ul>
+                    <li><a href="feed.html" class="active">Akış</a></li>
+                    <li><a href="explore.html">Keşfet</a></li>
+                    <li><a href="messages.html">Mesajlar</a></li>
+                    <li><a href="#notifications">Bildirimler</a></li>
+                </ul>
+            </nav>
+            <div class="user-actions">
+                <a href="profile.html" id="profile-link" class="nav-button-secondary">Profilim</a>
+                <button id="logout-btn" class="nav-button-primary">Çıkış Yap</button>
+            </div>
+        </div>
+    </header>
+
+    <main class="feed-container">
+        <aside class="sidebar-left">
+            <div class="profile-card">
+                <img id="user-profile-pic" src="https://picsum.photos/id/237/150/150" alt="Profil Resmi">
+                <h3 id="user-display-name">Yükleniyor...</h3>
+                <p id="user-username">@yükleniyor</p>
+                <a href="profile.html" class="profile-card-btn">Profiline Git</a>
+            </div>
+        </aside>
+
+        <section class="main-content">
+            <div class="create-post-container">
+                <div class="post-user-icon"><img id="post-profile-img" src="https://picsum.photos/id/237/50/50" alt="Profil Resmi"></div>
+                <div class="post-input-area">
+                    <textarea id="post-textarea" placeholder="Hukuki bir gelişme veya duyuru paylaşın..."></textarea>
+                    <div class="post-actions">
+                        <button id="share-post-btn" class="action-btn-primary">Paylaş</button>
+                    </div>
+                </div>
+            </div>
+
+            <div id="feed-stream" class="feed">
+                <p>Akış yükleniyor...</p>
+            </div>
+        </section>
+
+        <aside class="sidebar-right">
+            <div class="widgets">
+                <h3>Son Gelişmeler</h3>
+                <ul>
+                    <li><a href="#">Hukukta Yapay Zeka Devrimi</a></li>
+                    <li><a href="#">Yeni İcra Yasası Değişiklikleri</a></li>
+                    <li><a href="#">Dijital Veri Hukuku Konferansı</a></li>
+                </ul>
+            </div>
+        </aside>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Hukuk Platformu. Tüm hakları saklıdır.</p>
+        </div>
+    </footer>
+
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+    <script>
+      // Firebase yapılandırmasını buraya ekle
+      const firebaseConfig = {
+        apiKey: "AIzaSyD-I82vqUVdsAjjcTApj3VLLi_lQgGVl_Q",
+        authDomain: "avukat-9203e.firebaseapp.com",
+        projectId: "avukat-9203e",
+        storageBucket: "avukat-9203e.firebasestorage.app",
+        messagingSenderId: "692454745525",
+        appId: "1:692454745525:web:a900536eeefceaf50ca5fc",
+        measurementId: "G-MYX346EJ6Z"
+      };
+      firebase.initializeApp(firebaseConfig);
+      const auth = firebase.auth();
+      const db = firebase.firestore();
+    </script>
+    
+    <script src="js/feed.js"></script> 
+
+</body>
+</html>

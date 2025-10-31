@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profil - Hukuk Platformu</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/profile.css"> 
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <h1><a href="avukat.html" style="color:white; text-decoration:none;">Hukuk Platformu</a></h1>
+            <nav id="main-nav"></nav>
+        </div>
+    </header>
+
+    <main class="profile-container">
+        <div class="profile-header">
+            <div class="profile-banner"><img id="banner-img" src="" alt="Arka Plan Resmi"></div>
+            <div class="profile-picture"><img id="profile-img" src="" alt="Profil Resmi"></div>
+            <div class="profile-actions" style="display: none;"><button class="edit-profile-btn">Profili Düzenle</button></div>
+            <div class="profile-info">
+                <h2 id="display-name" class="display-name">Yükleniyor...</h2>
+                <p id="username" class="username">@...</p>
+                <p id="bio" class="bio">Profil bilgileri yükleniyor...</p>
+                <div class="extra-info">
+                    <span id="baro-no"><i class="fas fa-gavel"></i> Baro No: ...</span>
+                    <span id="join-date"><i class="fas fa-calendar-alt"></i> ... tarihinde katıldı</span>
+                </div>
+            </div>
+        </div>
+        <div class="profile-content">
+            <nav class="profile-tabs">
+                <ul>
+                    <li class="active"><a href="#" data-type="post">Gönderiler</a></li>
+                    <li><a href="#" data-type="article">Makaleler</a></li>
+                    <li><a href="#" data-type="media">Medya</a></li>
+                    <li><a href="#" data-type="featured">Öne Çıkanlar</a></li>
+                </ul>
+            </nav>
+            <div class="create-post-container">
+                <div class="post-user-icon"><img id="post-profile-img" src="" alt="Profil Resmi"></div>
+                <div class="post-input-area">
+                    <textarea id="post-textarea" placeholder="Hukuki bir gelişme veya duyuru paylaşın..."></textarea>
+                    <div class="post-actions">
+                        <button id="write-article-btn" class="action-btn-secondary">Makale Yaz</button>
+                        <button id="share-post-btn" class="action-btn-primary">Paylaş</button>
+                    </div>
+                </div>
+            </div>
+            <div id="feed-container" class="feed"><p>Yükleniyor...</p></div>
+        </div>
+    </main>
+    
+    <div id="edit-profile-modal" class="modal-backdrop">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span id="close-edit-modal" class="close-btn">&times;</span>
+                <h2>Profili Düzenle</h2>
+                <button type="submit" form="edit-profile-form" class="save-btn">Kaydet</button>
+            </div>
+            <form id="edit-profile-form">
+                <div class="modal-images-section">
+                    <div class="modal-banner-wrapper">
+                        <img id="modal-banner-preview" src="https://picsum.photos/id/1060/1500/500" alt="Arka Plan Önizleme">
+                        <div class="image-overlay-buttons">
+                            <label for="banner-upload" class="image-action-icon"><i class="fas fa-camera"></i></label>
+                            <button type="button" id="remove-banner-btn" class="image-action-icon"><i class="fas fa-times"></i></button>
+                        </div>
+                        <input type="file" id="banner-upload" accept="image/*" style="display: none;">
+                    </div>
+                    <div class="modal-profile-pic-wrapper">
+                        <img id="modal-profile-preview" src="https://picsum.photos/id/237/150/150" alt="Profil Resmi Önizleme">
+                        <div class="image-overlay-buttons profile">
+                             <label for="profile-pic-upload" class="image-action-icon"><i class="fas fa-camera"></i></label>
+                             <button type="button" id="remove-profile-pic-btn" class="image-action-icon"><i class="fas fa-times"></i></button>
+                        </div>
+                        <input type="file" id="profile-pic-upload" accept="image/*" style="display: none;">
+                    </div>
+                </div>
+                <div class="modal-form-fields">
+                    <label for="edit-username">İsim</label>
+                    <input type="text" id="edit-username" placeholder="İsminiz" required>
+                    <label for="edit-bio">Biyografi</label>
+                    <textarea id="edit-bio" placeholder="Kendinizden bahsedin..." rows="4"></textarea>
+                </div>
+                <p id="edit-status-message"></p>
+            </form>
+        </div>
+    </div>
+
+    <div id="create-article-modal" class="modal-backdrop">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span id="close-article-modal" class="close-btn">&times;</span>
+                <h2>Makale Oluştur</h2>
+                <button type="submit" form="create-article-form" class="save-btn">Yayınla</button>
+            </div>
+            <form id="create-article-form">
+                <div class="modal-form-fields">
+                    <label for="article-title">Makale Başlığı</label>
+                    <input type="text" id="article-title" placeholder="Dikkat çekici bir başlık girin" required>
+                    <label for="article-content">Makale İçeriği</label>
+                    <textarea id="article-content" placeholder="Makalenizi buraya yazın..." rows="10" required></textarea>
+                </div>
+                <p id="article-status-message"></p>
+            </form>
+        </div>
+    </div>
+    
+    <div id="notification-container"></div> 
+
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script>
+    <script>
+      const firebaseConfig = { apiKey: "AIzaSyD-I82vqUVdsAjjcTApj3VLLi_lQgGVl_Q", authDomain: "avukat-9203e.firebaseapp.com", projectId: "avukat-9203e", storageBucket: "avukat-9203e.firebasestorage.app", messagingSenderId: "692454745525", appId: "1:692454745525:web:a900536eeefceaf50ca5fc", measurementId: "G-MYX346EJ6Z" };
+      firebase.initializeApp(firebaseConfig);
+      const auth = firebase.auth();
+      const db = firebase.firestore();
+      const storage = firebase.storage();
+    </script>
+    <script src="js/profile.js"></script>
+</body>
+</html>
