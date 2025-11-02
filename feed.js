@@ -113,10 +113,11 @@ document.addEventListener('DOMContentLoaded', () => {
     // Çıkış yapma işlevi
     logoutBtn.addEventListener('click', () => {
         auth.signOut().then(() => {
-            window.location.href = 'avukat.html';
+            window.location.href = 'index.html';
         }).catch(error => {
             console.error("Çıkış yapılırken hata:", error);
             alert("Çıkış yapılırken bir hata oluştu.");
         });
     });
+
 });
