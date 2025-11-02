@@ -100,7 +100,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if(logoutBtn) {
         logoutBtn.addEventListener('click', () => {
             auth.signOut().then(() => {
-                window.location.href = 'avukat.html';
+                window.location.href = 'index.html';
             });
         });
     }
@@ -108,4 +108,5 @@ document.addEventListener('DOMContentLoaded', () => {
     // Dinamik olarak eklenen "Profiline Git" butonları için event delegation
     // (Eğer profile.html?uid=... linki yerine bir fonksiyon çalıştırsaydın gerekirdi,
     // a href kullandığın için şu an buna gerek yok.)
+
 });
