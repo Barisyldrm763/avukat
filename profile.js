@@ -48,7 +48,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (logoutBtn) {
                 logoutBtn.addEventListener('click', () => {
                      firebase.auth().signOut().then(() => {
-                        window.location.href = 'avukat.html';
+                        window.location.href = 'index.html';
                      });
                 });
             }
@@ -429,4 +429,5 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
+
 });
